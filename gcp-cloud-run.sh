@@ -95,7 +95,7 @@ run_with_progress() {
   ( "$@" ) >>"$LOG_FILE" 2>&1 &
   local pid=$!
   local pct=5
-  
+
   if [[ -t 1 ]]; then
     printf "\e[?25l"
     while kill -0 "$pid" 2>/dev/null; do
